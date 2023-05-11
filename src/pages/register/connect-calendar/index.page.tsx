@@ -3,10 +3,9 @@ import { Container, Header } from '../styles'
 import { ArrowRight } from 'phosphor-react'
 // import { api } from '@/lib/axios'
 import { ConnectBox, ConnectItem } from './styles'
-import { signIn, useSession } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
 
 export default function Register() {
-  const session = useSession()
   // async function handleRegister() {}
 
   return (
@@ -31,8 +30,6 @@ export default function Register() {
             Conectar <ArrowRight />
           </Button>
         </ConnectItem>
-
-        <Text>{JSON.stringify(session.data)}</Text>
 
         <Button type="submit">
           Próximo passo <ArrowRight />
