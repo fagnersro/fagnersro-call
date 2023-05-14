@@ -2,7 +2,7 @@ import { prisma } from '@/lib/prisma'
 import dayjs from 'dayjs'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function handle(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
@@ -66,7 +66,7 @@ export default async function handle(
       user_id: user.id,
       date: {
         gte: referenceDate.set('hour', startHour).toDate(),
-        lte: referenceDate.set('hour', startHour).toDate(),
+        lte: referenceDate.set('hour', endHour).toDate(),
       },
     },
   })
